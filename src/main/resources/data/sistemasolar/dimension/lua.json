@@ -1,0 +1,11 @@
+{
+  "type": "sistemasolar:lua",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "sistemasolar:lua",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "sistemasolar:lua_cratera"
+    }
+  }
+}

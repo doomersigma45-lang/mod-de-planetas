@@ -1,0 +1,11 @@
+{
+  "type": "sistemasolar:marte",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "sistemasolar:marte",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "sistemasolar:marte_deserto"
+    }
+  }
+}

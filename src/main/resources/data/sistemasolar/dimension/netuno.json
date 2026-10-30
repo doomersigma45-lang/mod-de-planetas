@@ -1,0 +1,11 @@
+{
+  "type": "sistemasolar:netuno",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "sistemasolar:netuno",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "sistemasolar:netuno_gelo"
+    }
+  }
+}

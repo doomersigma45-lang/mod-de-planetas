@@ -1,0 +1,11 @@
+{
+  "type": "sistemasolar:miller",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "sistemasolar:miller",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "sistemasolar:miller_oceano"
+    }
+  }
+}

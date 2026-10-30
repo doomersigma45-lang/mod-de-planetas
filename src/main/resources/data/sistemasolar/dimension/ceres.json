@@ -1,0 +1,11 @@
+{
+  "type": "sistemasolar:ceres",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "sistemasolar:ceres",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "sistemasolar:ceres_rochoso"
+    }
+  }
+}

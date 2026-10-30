@@ -1,0 +1,11 @@
+{
+  "type": "sistemasolar:venus",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "sistemasolar:venus",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "sistemasolar:venus_vulcanico"
+    }
+  }
+}

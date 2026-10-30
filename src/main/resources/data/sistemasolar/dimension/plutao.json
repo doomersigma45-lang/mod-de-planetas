@@ -1,0 +1,11 @@
+{
+  "type": "sistemasolar:plutao",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "sistemasolar:plutao",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "sistemasolar:plutao_planicie"
+    }
+  }
+}
