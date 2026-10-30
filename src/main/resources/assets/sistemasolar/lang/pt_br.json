@@ -14,5 +14,11 @@
   "item.sistemasolar.europa_locator": "Localizador de Europa",
   "item.sistemasolar.io_locator": "Localizador de Io",
   "item.sistemasolar.overworld_locator": "Localizador da Terra",
-  "item.sistemasolar.urano_locator": "Localizador de Urano"
+  "item.sistemasolar.urano_locator": "Localizador de Urano",
+  "item.sistemasolar.foguete_interplanetario": "Foguete Interplanetário",
+  "item.sistemasolar.cilindro_oxigenio": "Cilindro de Oxigênio",
+  "item.sistemasolar.capacete_espacial": "Capacete Espacial",
+  "item.sistemasolar.peitoral_espacial": "Peitoral Espacial",
+  "item.sistemasolar.calcas_espaciais": "Calças Espaciais",
+  "item.sistemasolar.botas_espaciais": "Botas Espaciais"
 }

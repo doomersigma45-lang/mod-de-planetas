@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "I I",
+    "IOI",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "O": {
+      "item": "sistemasolar:cilindro_oxigenio"
+    }
+  },
+  "result": {
+    "item": "sistemasolar:peitoral_espacial"
+  }
+}

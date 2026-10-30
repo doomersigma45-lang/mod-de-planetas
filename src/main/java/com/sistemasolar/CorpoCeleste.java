@@ -5,6 +5,9 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
 
+import java.util.Arrays;
+import java.util.Optional;
+
 public enum CorpoCeleste {
     MARTE("marte", "Marte"),
     VENUS("venus", "Vênus"),
@@ -47,5 +50,13 @@ public enum CorpoCeleste {
 
     public ResourceKey<Level> dimensao() {
         return ResourceKey.create(Registries.DIMENSION, new ResourceLocation(namespace, id));
+    }
+
+    public boolean precisaOxigenio() {
+        return this != TERRA;
+    }
+
+    public static Optional<CorpoCeleste> porDimensao(ResourceKey<Level> key) {
+        return Arrays.stream(values()).filter(corpo -> corpo.dimensao().equals(key)).findFirst();
     }
 }

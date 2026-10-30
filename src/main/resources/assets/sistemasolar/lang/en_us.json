@@ -14,5 +14,11 @@
   "item.sistemasolar.europa_locator": "Europa Locator",
   "item.sistemasolar.io_locator": "Io Locator",
   "item.sistemasolar.overworld_locator": "Earth Locator",
-  "item.sistemasolar.urano_locator": "Uranus Locator"
+  "item.sistemasolar.urano_locator": "Uranus Locator",
+  "item.sistemasolar.foguete_interplanetario": "Interplanetary Rocket",
+  "item.sistemasolar.cilindro_oxigenio": "Oxygen Canister",
+  "item.sistemasolar.capacete_espacial": "Space Helmet",
+  "item.sistemasolar.peitoral_espacial": "Space Chestplate",
+  "item.sistemasolar.calcas_espaciais": "Space Leggings",
+  "item.sistemasolar.botas_espaciais": "Space Boots"
 }
