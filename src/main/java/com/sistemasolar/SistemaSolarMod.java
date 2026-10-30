@@ -2,10 +2,10 @@ package com.sistemasolar;
 
 import com.sistemasolar.item.ItensMod;
 import com.sistemasolar.world.BlocosMod;
+import com.sistemasolar.world.AlienEntity;
 import com.sistemasolar.world.EntidadesMod;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.SpawnPlacements;
-import net.minecraft.world.entity.monster.Slime;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
@@ -31,7 +31,7 @@ public class SistemaSolarMod {
     }
 
     private void registerEntityAttributes(EntityAttributeCreationEvent event) {
-        event.put(EntidadesMod.ALIEN.get(), Slime.createAttributes().build());
+        event.put(EntidadesMod.ALIEN.get(), AlienEntity.createAttributes().build());
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
