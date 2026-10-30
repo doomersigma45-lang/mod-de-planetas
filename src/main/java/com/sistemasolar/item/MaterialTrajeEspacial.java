@@ -35,7 +35,7 @@ public final class MaterialTrajeEspacial implements ArmorMaterial {
     @Override public int getEnchantmentValue() { return 18; }
     @Override public SoundEvent getEquipSound() { return SoundEvents.ARMOR_EQUIP_IRON; }
     @Override public Ingredient getRepairIngredient() { return Ingredient.of(Items.IRON_INGOT); }
-    @Override public String getName() { return "leather"; }
+    @Override public String getName() { return "iron"; }
     @Override public float getToughness() { return 2.0F; }
     @Override public float getKnockbackResistance() { return 0.05F; }
 }

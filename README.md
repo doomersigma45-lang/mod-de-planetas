@@ -1,6 +1,6 @@
 # Mod Sistema Solar — Forge 1.20.1
 
-Projeto colaborativo com Claude. O mod cria dimensões próprias e localizadores para viajar entre os corpos celestes.
+Projeto colaborativo com Claude. O mod cria dimensões próprias, blocos de superfície exclusivos e viagens espaciais entre corpos celestes.
 
 ## Corpos
 
@@ -18,7 +18,11 @@ Marte, Vênus, Planeta Miller, Netuno, Plutão, Ceres, Lua, Saturno, Júpiter, H
 
 Os localizadores estão na aba **Ferramentas e utilidades** do modo Criativo. Use o localizador do destino com o botão direito para viajar; o Localizador da Terra retorna ao mundo normal.
 
-O traje espacial completo protege contra a falta de ar. O peitoral começa sem oxigênio; use um cilindro de oxigênio com ele equipado para recarregá-lo. O foguete interplanetário é reutilizável: agache e clique com o botão direito para escolher o destino, depois clique com o botão direito para lançar. Os itens também têm receitas de fabricação.
+O traje espacial completo usa armadura metálica e mostra a reserva de oxigênio na interface. O peitoral começa sem oxigênio; use um cilindro para recarregá-lo. Uma carga dura 2 minutos.
+
+O foguete interplanetário constrói uma plataforma e um foguete antes do lançamento. Agache e clique com o botão direito para escolher o destino. Use o foguete na superfície para entrar no espaço e use-o novamente no espaço para pousar no destino. Também é possível alcançar o espaço subindo acima de Y=256 com o traje e oxigênio.
+
+Plutão possui cidades futuristas, Io tem vulcões ativos, e Europa e Plutão escondem bolsões de oceano sob o gelo com fauna aquática. Alienígenas aparecem em alguns mundos. No espaço há asteroides, uma nave abandonada e representações visíveis dos planetas.
 
 ## Desenvolvimento
 
@@ -27,4 +31,4 @@ O traje espacial completo protege contra a falta de ar. O peitoral começa sem o
 - Java 17
 - ForgeGradle 6
 
-Abra o projeto no IntelliJ IDEA ou Eclipse e execute a tarefa Gradle `build` para gerar o mod em `build/libs`.
+Abra o projeto no IntelliJ IDEA ou Eclipse e execute a tarefa Gradle `jar` para gerar o mod em `build/libs`.

@@ -3,6 +3,7 @@ package com.sistemasolar.event;
 import com.sistemasolar.CorpoCeleste;
 import com.sistemasolar.SistemaSolarMod;
 import com.sistemasolar.item.ItensMod;
+import com.sistemasolar.world.EspacoSolar;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -31,20 +32,44 @@ public final class EventosAtmosfera {
 
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
-        if (event.phase != TickEvent.Phase.END || event.player.level().isClientSide
-                || event.player.tickCount % 20 != 0) return;
-
-        CorpoCeleste corpo = CorpoCeleste.porDimensao(event.player.level().dimension()).orElse(null);
-        if (corpo == null || !corpo.precisaOxigenio()) return;
+        if (event.phase != TickEvent.Phase.END || event.player.level().isClientSide) return;
 
         Player player = event.player;
+        boolean noEspaco = player.level().dimension().equals(EspacoSolar.DIMENSAO);
+        if (noEspaco && !player.onGround()) {
+            net.minecraft.world.phys.Vec3 movimento = player.getDeltaMovement();
+            player.setDeltaMovement(movimento.x, Math.max(-0.04, Math.min(0.04, movimento.y)), movimento.z);
+        }
+        if (player.tickCount % 20 != 0) return;
+
+        CorpoCeleste corpo = CorpoCeleste.porDimensao(player.level().dimension()).orElse(null);
+        if (!noEspaco && (corpo == null || !corpo.precisaOxigenio())) {
+            if (player instanceof net.minecraft.server.level.ServerPlayer serverPlayer && player.getY() > 256) {
+                if (temOxigenio(player)) {
+                    net.minecraft.server.level.ServerLevel espaco = serverPlayer.server.getLevel(EspacoSolar.DIMENSAO);
+                    if (espaco != null) {
+                        serverPlayer.teleportTo(espaco, player.getX(), 92.0, player.getZ(),
+                                java.util.Set.of(), player.getYRot(), player.getXRot());
+                        player.displayClientMessage(Component.literal("Você alcançou o espaço.")
+                                .withStyle(ChatFormatting.AQUA), true);
+                    }
+                } else {
+                    player.hurt(player.damageSources().drown(), 4.0F);
+                    player.teleportTo(player.getX(), 250.0, player.getZ());
+                    player.displayClientMessage(Component.literal("Você precisa do traje e de oxigênio para sair da atmosfera.")
+                            .withStyle(ChatFormatting.RED), true);
+                }
+            }
+            return;
+        }
+
         ItemStack peitoral = player.getItemBySlot(EquipmentSlot.CHEST);
         boolean possuiOxigenio = temOxigenio(player);
         if (possuiOxigenio) {
             int restante = peitoral.getOrCreateTag().getInt("Oxygen") - 1;
             peitoral.getOrCreateTag().putInt("Oxygen", restante);
-            if (restante % 60 == 0) {
-                player.displayClientMessage(Component.literal("Oxigênio: " + (restante / 60) + " min")
+            if (restante % 400 == 0) {
+                player.displayClientMessage(Component.literal("Oxigênio: " + (restante / 20) + " s")
                         .withStyle(ChatFormatting.AQUA), true);
             }
         } else {

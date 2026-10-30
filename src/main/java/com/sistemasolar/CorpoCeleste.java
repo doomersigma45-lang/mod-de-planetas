@@ -16,7 +16,7 @@ public enum CorpoCeleste {
     PLUTAO("plutao", "Plutão"),
     CERES("ceres", "Ceres"),
     LUA("lua", "Lua"),
-    SATURNO("saturno", "Saturno"),
+    SATURNO("saturno", "Saturno", "saturn", SistemaSolarMod.MOD_ID),
     JUPITER("jupiter", "Júpiter"),
     URANO("urano", "Urano"),
     HAUMEA("haumea", "Haumea"),
@@ -28,15 +28,21 @@ public enum CorpoCeleste {
 
     private final String id;
     private final String nome;
+    private final String idDimensao;
     private final String namespace;
 
     CorpoCeleste(String id, String nome) {
-        this(id, nome, SistemaSolarMod.MOD_ID);
+        this(id, nome, id, SistemaSolarMod.MOD_ID);
     }
 
     CorpoCeleste(String id, String nome, String namespace) {
+        this(id, nome, id, namespace);
+    }
+
+    CorpoCeleste(String id, String nome, String idDimensao, String namespace) {
         this.id = id;
         this.nome = nome;
+        this.idDimensao = idDimensao;
         this.namespace = namespace;
     }
 
@@ -49,7 +55,7 @@ public enum CorpoCeleste {
     }
 
     public ResourceKey<Level> dimensao() {
-        return ResourceKey.create(Registries.DIMENSION, new ResourceLocation(namespace, id));
+        return ResourceKey.create(Registries.DIMENSION, new ResourceLocation(namespace, idDimensao));
     }
 
     public boolean precisaOxigenio() {

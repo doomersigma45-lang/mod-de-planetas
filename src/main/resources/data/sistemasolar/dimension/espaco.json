@@ -1,0 +1,13 @@
+{
+  "type": "sistemasolar:espaco",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "biome": "sistemasolar:espaco",
+      "lakes": false,
+      "features": false,
+      "layers": [],
+      "structure_overrides": []
+    }
+  }
+}

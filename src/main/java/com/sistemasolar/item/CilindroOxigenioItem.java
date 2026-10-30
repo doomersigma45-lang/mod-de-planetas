@@ -14,7 +14,7 @@ import net.minecraft.world.level.Level;
 import java.util.List;
 
 public class CilindroOxigenioItem extends Item {
-    public static final int CARGA_COMPLETA = 600;
+    public static final int CARGA_COMPLETA = 2400;
 
     public CilindroOxigenioItem() {
         super(new Item.Properties().stacksTo(16));
@@ -40,6 +40,6 @@ public class CilindroOxigenioItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, Level level, List<Component> tooltip, TooltipFlag flag) {
-        tooltip.add(Component.literal("Recarrega o peitoral espacial.").withStyle(ChatFormatting.GRAY));
+        tooltip.add(Component.literal("Recarrega até 2 minutos de oxigênio.").withStyle(ChatFormatting.GRAY));
     }
 }
