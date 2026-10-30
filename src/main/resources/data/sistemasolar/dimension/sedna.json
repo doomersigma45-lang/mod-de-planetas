@@ -1,0 +1,11 @@
+{
+  "type": "sistemasolar:sedna",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "sistemasolar:sedna",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "sistemasolar:sedna_gelado"
+    }
+  }
+}

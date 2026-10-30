@@ -1,0 +1,11 @@
+{
+  "type": "sistemasolar:jupiter",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "sistemasolar:jupiter",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "sistemasolar:jupiter_tempestade"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "sistemasolar:saturn",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "sistemasolar:saturn",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "sistemasolar:saturn_bandas"
+    }
+  }
+}

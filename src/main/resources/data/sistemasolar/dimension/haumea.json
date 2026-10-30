@@ -1,0 +1,11 @@
+{
+  "type": "sistemasolar:haumea",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "sistemasolar:haumea",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "sistemasolar:haumea_gelo"
+    }
+  }
+}

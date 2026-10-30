@@ -1,0 +1,11 @@
+{
+  "type": "sistemasolar:titan",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "sistemasolar:titan",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "sistemasolar:titan_metano"
+    }
+  }
+}

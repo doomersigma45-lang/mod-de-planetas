@@ -77,6 +77,48 @@ CORPOS = {
         fluido="water", nivel_mar=-64, base_y=68, amp=0.3, xz=0.5,
         tempo_fixo=18000, luz_ambiente=0.1, quente=False,
         cores=("#000000", "#0A0A0A", "#3A4A5A", "#202A33"), temp=-0.3),
+    "saturno": dict(
+        bioma="bandas", default="minecraft:red_sandstone",
+        topo="minecraft:orange_terracotta", sub="minecraft:red_sandstone",
+        fluido="water", nivel_mar=-64, base_y=74, amp=0.28, xz=0.8,
+        tempo_fixo=None, luz_ambiente=0.02, quente=False,
+        cores=("#D3A05B", "#B47D48", "#8B7355", "#5C4936"), temp=0.4),
+    "jupiter": dict(
+        bioma="tempestade", default="minecraft:granite",
+        topo="minecraft:orange_terracotta", sub="minecraft:red_sandstone",
+        fluido="water", nivel_mar=-64, base_y=68, amp=0.7, xz=0.9,
+        tempo_fixo=None, luz_ambiente=0.08, quente=False,
+        cores=("#C98F58", "#D9A879", "#8B745F", "#594A3D"), temp=0.8),
+    "haumea": dict(
+        bioma="gelo", default="minecraft:packed_ice",
+        topo="minecraft:snow_block", sub="minecraft:blue_ice",
+        fluido="water", nivel_mar=-64, base_y=82, amp=0.3, xz=0.5,
+        tempo_fixo=None, luz_ambiente=0.03, quente=False,
+        cores=("#9FC7E8", "#C4DDF2", "#6D9CBF", "#456C8C"), temp=-0.5),
+    "sedna": dict(
+        bioma="gelado", default="minecraft:packed_ice",
+        topo="minecraft:red_terracotta", sub="minecraft:blue_ice",
+        fluido="water", nivel_mar=-64, base_y=76, amp=0.4, xz=0.65,
+        tempo_fixo=18000, luz_ambiente=0.01, quente=False,
+        cores=("#6E4652", "#8B5A60", "#45586C", "#283544"), temp=-1.0),
+    "titan": dict(
+        bioma="metano", default="minecraft:stone",
+        topo="minecraft:orange_terracotta", sub="minecraft:tuff",
+        fluido="water", nivel_mar=48, base_y=58, amp=0.15, xz=0.5,
+        tempo_fixo=18000, luz_ambiente=0.04, quente=False,
+        cores=("#B8783E", "#D19759", "#72543C", "#44352B"), temp=-0.3),
+    "europa": dict(
+        bioma="oceano", default="minecraft:packed_ice",
+        topo="minecraft:snow_block", sub="minecraft:blue_ice",
+        fluido="water", nivel_mar=48, base_y=60, amp=0.16, xz=0.45,
+        tempo_fixo=18000, luz_ambiente=0.03, quente=False,
+        cores=("#83B6D5", "#A8CCDF", "#386E9A", "#1C3D60"), temp=-0.4),
+    "io": dict(
+        bioma="vulcanico", default="minecraft:basalt",
+        topo="minecraft:blackstone", sub="minecraft:netherrack",
+        fluido="lava", nivel_mar=42, base_y=64, amp=0.55, xz=0.7,
+        tempo_fixo=6000, luz_ambiente=0.12, quente=True,
+        cores=("#D97932", "#C56B32", "#7C3822", "#4D2118"), temp=1.5),
 }
 
 CATEGORIAS_MOB = ["monster", "creature", "ambient", "axolotls",
@@ -238,3 +280,4 @@ if __name__ == "__main__":
         if alvo not in CORPOS:
             sys.exit(f"corpo desconhecido: {alvo} (opções: {', '.join(CORPOS)})")
         gerar(alvo)
+

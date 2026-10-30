@@ -1,0 +1,11 @@
+{
+  "type": "sistemasolar:europa",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "sistemasolar:europa",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "sistemasolar:europa_oceano"
+    }
+  }
+}
