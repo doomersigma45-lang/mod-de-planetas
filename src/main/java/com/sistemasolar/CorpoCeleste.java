@@ -15,6 +15,7 @@ public enum CorpoCeleste {
     LUA("lua", "Lua"),
     SATURNO("saturno", "Saturno"),
     JUPITER("jupiter", "Júpiter"),
+    URANO("urano", "Urano"),
     HAUMEA("haumea", "Haumea"),
     SEDNA("sedna", "Sedna"),
     TITAN("titan", "Titã"),

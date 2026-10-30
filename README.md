@@ -4,7 +4,7 @@ Projeto colaborativo com Claude. O mod cria dimensões próprias e localizadores
 
 ## Corpos
 
-Marte, Vênus, Planeta Miller, Netuno, Plutão, Ceres, Lua, Saturno, Júpiter, Haumea, Sedna, Titã, Europa e Io.
+Marte, Vênus, Planeta Miller, Netuno, Plutão, Ceres, Lua, Saturno, Júpiter, Haumea, Sedna, Titã, Europa e Io. **Urano** é o planeta extra escolhido para este projeto.
 
 ## Convenções do projeto
 

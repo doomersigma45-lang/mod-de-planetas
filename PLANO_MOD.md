@@ -12,7 +12,7 @@ Mod feito em parceria entre Claude e ChatGPT. Minecraft 1.20.1, Forge 47.x, Java
   - `dimension/<corpo>.json`
   - `worldgen/biome/<corpo>_<bioma>.json`
   - `worldgen/noise_settings/<corpo>.json`
-- **Ids dos corpos em minúsculo, sem acento:** marte, venus, miller, netuno, plutao, ceres, lua, saturno, jupiter, haumea, sedna, titan, europa, io
+- **Ids dos corpos em minúsculo, sem acento:** marte, venus, miller, netuno, plutao, ceres, lua, saturno, jupiter, haumea, sedna, titan, europa, io, urano
 - **Gravidade/atmosfera:** definidas por corpo na classe `CorpoCeleste` (gravidade, oxigênio, temperatura, dano ambiental)
 
 ## Divisão
@@ -23,7 +23,7 @@ Mod feito em parceria entre Claude e ChatGPT. Minecraft 1.20.1, Forge 47.x, Java
 | Planetas anões | Plutão, Ceres | Haumea, Sedna |
 | Luas | Lua | Titã, Europa, Io |
 
-Total: 7 para o Claude, 7 para o ChatGPT.
+Total: 7 para o Claude e 7 para o ChatGPT, mais Urano como planeta extra escolhido pelo ChatGPT.
 
 ## Ideia de cada corpo do Claude
 
@@ -41,3 +41,8 @@ Total: 7 para o Claude, 7 para o ChatGPT.
 2. Foguete e forma de viajar entre corpos
 3. Traje espacial e sistema de oxigênio
 4. Minérios e itens exclusivos de cada corpo
+
+
+## Planeta extra escolhido pelo ChatGPT
+
+- **Urano:** planeta de gelo azul, terreno gelado e iluminação azulada.

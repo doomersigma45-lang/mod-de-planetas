@@ -89,6 +89,12 @@ CORPOS = {
         fluido="water", nivel_mar=-64, base_y=68, amp=0.7, xz=0.9,
         tempo_fixo=None, luz_ambiente=0.08, quente=False,
         cores=("#C98F58", "#D9A879", "#8B745F", "#594A3D"), temp=0.8),
+    "urano": dict(
+        bioma="gelo_azul", default="minecraft:packed_ice",
+        topo="minecraft:blue_ice", sub="minecraft:packed_ice",
+        fluido="water", nivel_mar=-64, base_y=84, amp=0.48, xz=0.75,
+        tempo_fixo=None, luz_ambiente=0.02, quente=False,
+        cores=("#5A9CC8", "#78B6D8", "#3B7197", "#24465F"), temp=-0.7),
     "haumea": dict(
         bioma="gelo", default="minecraft:packed_ice",
         topo="minecraft:snow_block", sub="minecraft:blue_ice",

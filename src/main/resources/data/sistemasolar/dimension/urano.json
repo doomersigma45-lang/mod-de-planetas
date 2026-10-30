@@ -1,0 +1,11 @@
+{
+  "type": "sistemasolar:urano",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "sistemasolar:urano",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "sistemasolar:urano_gelo_azul"
+    }
+  }
+}
