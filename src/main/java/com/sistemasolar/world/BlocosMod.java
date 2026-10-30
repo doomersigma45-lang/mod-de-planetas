@@ -9,6 +9,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.EnumMap;
@@ -17,7 +18,7 @@ import java.util.function.Supplier;
 
 public final class BlocosMod {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(Registries.BLOCK, SistemaSolarMod.MOD_ID);
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Registries.ITEM, SistemaSolarMod.MOD_ID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, SistemaSolarMod.MOD_ID);
     public static final Map<CorpoCeleste, RegistryObject<Block>> SUPERFICIES = new EnumMap<>(CorpoCeleste.class);
 
     static {
