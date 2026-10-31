@@ -1,0 +1,30 @@
+# Mod só de dados (sem código Java por enquanto): carrega as dimensões dos corpos celestes.
+# Quando entrar código Java (foguetes, trajes), trocar modLoader para "javafml".
+modLoader = "lowcodefml"
+loaderVersion = "[47,)"
+license = "All Rights Reserved"
+
+[[mods]]
+modId = "sistemasolar"
+version = "0.1.0"
+displayName = "Sistema Solar"
+description = '''
+Planetas, luas e planetas anões como dimensões: Marte, Vênus, Planeta Miller, Netuno,
+Saturno, Júpiter, Plutão, Ceres, Haumea, Sedna, Lua, Titã, Europa e Io.
+Versão 0.1.0: só o terreno das dimensões. Foguetes e trajes ainda não existem.
+'''
+authors = "doomersigma45, Claude"
+
+[[dependencies.sistemasolar]]
+modId = "forge"
+mandatory = true
+versionRange = "[47,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.sistemasolar]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20.1,1.20.2)"
+ordering = "NONE"
+side = "BOTH"
