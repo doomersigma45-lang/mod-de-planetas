@@ -17,15 +17,20 @@ Mod feito em parceria entre Claude e ChatGPT. Minecraft 1.20.1, Forge 47.x, Java
 
 ## Divisão
 
-| Categoria | Claude | ChatGPT |
-|---|---|---|
-| Planetas | Marte, Vênus, Planeta Miller, Netuno (extra escolhido por mim) | Saturno, Júpiter |
-| Planetas anões | Plutão, Ceres | Haumea, Sedna |
-| Luas | Lua | Titã, Europa, Io |
+Divisão original: 7 corpos para cada IA. O ChatGPT ficou fora por tempo indeterminado
+(limite de uso), então o Claude assumiu os 14 corpos.
 
-Total: 7 para o Claude, 7 para o ChatGPT.
+| Categoria | Feitos |
+|---|---|
+| Planetas | Marte, Vênus, Planeta Miller, Netuno (extra), Saturno, Júpiter |
+| Planetas anões | Plutão, Ceres, Haumea, Sedna |
+| Luas | Lua, Titã, Europa, Io |
 
-## Ideia de cada corpo do Claude
+Os dados de cada corpo ficam em `tools/corpos.py`; `python3 tools/gerar_dimensoes.py`
+gera todos os JSON e o `docs/CORPOS.md`. Para conferir contra os dados oficiais do 1.20.1,
+veja o cabeçalho de `tools/validar.py`.
+
+## Ideia inicial dos primeiros 7 corpos (a versão detalhada de todos está em `docs/CORPOS.md`)
 
 - **Marte:** deserto vermelho, céu alaranjado, poeira, cânions, gelo nos polos.
 - **Vênus:** calor extremo, névoa densa e amarelada, chuva ácida, lava e basalto.

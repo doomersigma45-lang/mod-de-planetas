@@ -1,5 +1,5 @@
 {
-  "sea_level": 64,
+  "sea_level": 63,
   "disable_mob_generation": false,
   "aquifers_enabled": false,
   "ore_veins_enabled": false,
@@ -20,43 +20,154 @@
     "size_vertical": 2
   },
   "noise_router": {
-    "barrier": 0,
-    "fluid_level_floodedness": 0,
-    "fluid_level_spread": 0,
-    "lava": 0,
-    "temperature": 0,
-    "vegetation": 0,
-    "continents": 0,
-    "erosion": 0,
-    "depth": 0,
-    "ridges": 0,
-    "initial_density_without_jaggedness": 0,
-    "final_density": {
-      "type": "minecraft:interpolated",
-      "argument": {
+    "barrier": 0.0,
+    "fluid_level_floodedness": 0.0,
+    "fluid_level_spread": 0.0,
+    "lava": 0.0,
+    "temperature": {
+      "type": "minecraft:noise",
+      "noise": "minecraft:temperature",
+      "xz_scale": 2.2,
+      "y_scale": 0.0
+    },
+    "vegetation": {
+      "type": "minecraft:noise",
+      "noise": "minecraft:vegetation",
+      "xz_scale": 1.54,
+      "y_scale": 0.0
+    },
+    "continents": {
+      "type": "minecraft:clamp",
+      "input": {
+        "type": "minecraft:noise",
+        "noise": "minecraft:continentalness",
+        "xz_scale": 1.6,
+        "y_scale": 0.0
+      },
+      "min": -1.0,
+      "max": 1.0
+    },
+    "erosion": 0.0,
+    "depth": 0.0,
+    "ridges": 0.0,
+    "initial_density_without_jaggedness": {
+      "type": "minecraft:add",
+      "argument1": {
         "type": "minecraft:add",
         "argument1": {
           "type": "minecraft:y_clamped_gradient",
-          "from_y": 34,
-          "to_y": 82,
+          "from_y": 31,
+          "to_y": 91,
           "from_value": 1.0,
           "to_value": -1.0
         },
         "argument2": {
           "type": "minecraft:mul",
-          "argument1": 0.08,
+          "argument1": 0.2,
           "argument2": {
-            "type": "minecraft:noise",
-            "noise": "minecraft:erosion",
-            "xz_scale": 0.4,
-            "y_scale": 0.25
+            "type": "minecraft:clamp",
+            "input": {
+              "type": "minecraft:noise",
+              "noise": "minecraft:erosion",
+              "xz_scale": 3.0,
+              "y_scale": 0.0
+            },
+            "min": -1.0,
+            "max": 1.0
+          }
+        }
+      },
+      "argument2": {
+        "type": "minecraft:mul",
+        "argument1": 0.25,
+        "argument2": {
+          "type": "minecraft:clamp",
+          "input": {
+            "type": "minecraft:mul",
+            "argument1": 4.0,
+            "argument2": {
+              "type": "minecraft:add",
+              "argument1": {
+                "type": "minecraft:clamp",
+                "input": {
+                  "type": "minecraft:noise",
+                  "noise": "minecraft:continentalness",
+                  "xz_scale": 1.6,
+                  "y_scale": 0.0
+                },
+                "min": -1.0,
+                "max": 1.0
+              },
+              "argument2": -0.63
+            }
+          },
+          "min": 0.0,
+          "max": 1.0
+        }
+      }
+    },
+    "final_density": {
+      "type": "minecraft:interpolated",
+      "argument": {
+        "type": "minecraft:add",
+        "argument1": {
+          "type": "minecraft:add",
+          "argument1": {
+            "type": "minecraft:y_clamped_gradient",
+            "from_y": 31,
+            "to_y": 91,
+            "from_value": 1.0,
+            "to_value": -1.0
+          },
+          "argument2": {
+            "type": "minecraft:mul",
+            "argument1": 0.2,
+            "argument2": {
+              "type": "minecraft:clamp",
+              "input": {
+                "type": "minecraft:noise",
+                "noise": "minecraft:erosion",
+                "xz_scale": 3.0,
+                "y_scale": 0.0
+              },
+              "min": -1.0,
+              "max": 1.0
+            }
+          }
+        },
+        "argument2": {
+          "type": "minecraft:mul",
+          "argument1": 0.25,
+          "argument2": {
+            "type": "minecraft:clamp",
+            "input": {
+              "type": "minecraft:mul",
+              "argument1": 4.0,
+              "argument2": {
+                "type": "minecraft:add",
+                "argument1": {
+                  "type": "minecraft:clamp",
+                  "input": {
+                    "type": "minecraft:noise",
+                    "noise": "minecraft:continentalness",
+                    "xz_scale": 1.6,
+                    "y_scale": 0.0
+                  },
+                  "min": -1.0,
+                  "max": 1.0
+                },
+                "argument2": -0.63
+              }
+            },
+            "min": 0.0,
+            "max": 1.0
           }
         }
       }
     },
-    "vein_toggle": 0,
-    "vein_ridged": 0,
-    "vein_gap": 0
+    "vein_toggle": 0.0,
+    "vein_ridged": 0.0,
+    "vein_gap": 0.0
   },
   "spawn_target": [],
   "surface_rule": {
@@ -84,33 +195,139 @@
       {
         "type": "minecraft:condition",
         "if_true": {
-          "type": "minecraft:stone_depth",
-          "offset": 0,
-          "surface_type": "floor",
-          "add_surface_depth": false,
-          "secondary_depth_range": 0
+          "type": "minecraft:biome",
+          "biome_is": [
+            "sistemasolar:miller_ilhas_de_rocha"
+          ]
         },
         "then_run": {
-          "type": "minecraft:block",
-          "result_state": {
-            "Name": "minecraft:sand"
-          }
+          "type": "minecraft:sequence",
+          "sequence": [
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:stone_depth",
+                "offset": 0,
+                "surface_type": "floor",
+                "add_surface_depth": false,
+                "secondary_depth_range": 0
+              },
+              "then_run": {
+                "type": "minecraft:block",
+                "result_state": {
+                  "Name": "minecraft:granite"
+                }
+              }
+            },
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:stone_depth",
+                "offset": 0,
+                "surface_type": "floor",
+                "add_surface_depth": true,
+                "secondary_depth_range": 0
+              },
+              "then_run": {
+                "type": "minecraft:block",
+                "result_state": {
+                  "Name": "minecraft:stone"
+                }
+              }
+            }
+          ]
         }
       },
       {
         "type": "minecraft:condition",
         "if_true": {
-          "type": "minecraft:stone_depth",
-          "offset": 0,
-          "surface_type": "floor",
-          "add_surface_depth": true,
-          "secondary_depth_range": 0
+          "type": "minecraft:biome",
+          "biome_is": [
+            "sistemasolar:miller_bancos_de_areia"
+          ]
         },
         "then_run": {
-          "type": "minecraft:block",
-          "result_state": {
-            "Name": "minecraft:sandstone"
-          }
+          "type": "minecraft:sequence",
+          "sequence": [
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:stone_depth",
+                "offset": 0,
+                "surface_type": "floor",
+                "add_surface_depth": false,
+                "secondary_depth_range": 0
+              },
+              "then_run": {
+                "type": "minecraft:block",
+                "result_state": {
+                  "Name": "minecraft:sand"
+                }
+              }
+            },
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:stone_depth",
+                "offset": 0,
+                "surface_type": "floor",
+                "add_surface_depth": true,
+                "secondary_depth_range": 0
+              },
+              "then_run": {
+                "type": "minecraft:block",
+                "result_state": {
+                  "Name": "minecraft:sandstone"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "minecraft:condition",
+        "if_true": {
+          "type": "minecraft:biome",
+          "biome_is": [
+            "sistemasolar:miller_leito_de_cascalho"
+          ]
+        },
+        "then_run": {
+          "type": "minecraft:sequence",
+          "sequence": [
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:stone_depth",
+                "offset": 0,
+                "surface_type": "floor",
+                "add_surface_depth": false,
+                "secondary_depth_range": 0
+              },
+              "then_run": {
+                "type": "minecraft:block",
+                "result_state": {
+                  "Name": "minecraft:gravel"
+                }
+              }
+            },
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:stone_depth",
+                "offset": 0,
+                "surface_type": "floor",
+                "add_surface_depth": true,
+                "secondary_depth_range": 0
+              },
+              "then_run": {
+                "type": "minecraft:block",
+                "result_state": {
+                  "Name": "minecraft:stone"
+                }
+              }
+            }
+          ]
         }
       }
     ]
