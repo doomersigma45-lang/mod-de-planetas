@@ -26,8 +26,22 @@
     "creature": [],
     "ambient": [],
     "axolotls": [],
-    "underground_water_creature": [],
-    "water_creature": [],
+    "underground_water_creature": [
+      {
+        "type": "minecraft:glow_squid",
+        "weight": 20,
+        "minCount": 2,
+        "maxCount": 4
+      }
+    ],
+    "water_creature": [
+      {
+        "type": "minecraft:squid",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ],
     "water_ambient": [],
     "misc": []
   },
@@ -53,5 +67,6 @@
     [],
     [],
     []
-  ]
+  ],
+  "creature_spawn_probability": 0.2
 }

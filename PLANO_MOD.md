@@ -46,3 +46,12 @@ veja o cabeçalho de `tools/validar.py`.
 2. Foguete e forma de viajar entre corpos
 3. Traje espacial e sistema de oxigênio
 4. Minérios e itens exclusivos de cada corpo
+
+## Plutão (v0.2.0) e integração com o Netherite Supremo
+
+- Plutão agora é uma **crosta de gelo sobre oceanos** (mesmo esquema de camadas de Europa): fundo rochoso, água
+  no meio e crosta de gelo na superfície, com coração de Tombaugh, terras escuras de tolinas e montanhas de gelo.
+- As **árvores de cristal** e os spawns de **Aldeão Precursor e Robô** vêm do mod *Netherite Supremo* (repositório
+  `repositorio-pro-meu-mano-cloud-2`), que liga isso aos biomas `sistemasolar:plutao_*` por tags opcionais.
+  Sem o Netherite Supremo instalado, Plutão funciona normalmente, só sem as árvores e os mobs.
+- O boss de Plutão fica para depois.

@@ -1,0 +1,20 @@
+name: Release
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Empacota e publica
+        run: |
+          VERSAO=$(grep '^version' src/main/resources/META-INF/mods.toml | head -1 | cut -d'"' -f2)
+          python3 tools/empacotar.py "$VERSAO" dist
+          TAG="v$VERSAO-build-${GITHUB_RUN_NUMBER}"
+          gh release create "$TAG" dist/* --title "Sistema Solar $VERSAO (build $GITHUB_RUN_NUMBER)" \
+            --notes "Mod Forge 1.20.1: coloque o .jar na pasta mods/ (o .zip é a versão datapack)."
+        env:
+          GH_TOKEN: ${{ github.token }}

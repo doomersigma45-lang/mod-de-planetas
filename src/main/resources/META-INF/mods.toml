@@ -6,12 +6,12 @@ license = "All Rights Reserved"
 
 [[mods]]
 modId = "sistemasolar"
-version = "0.1.0"
+version = "0.2.0"
 displayName = "Sistema Solar"
 description = '''
 Planetas, luas e planetas anões como dimensões: Marte, Vênus, Planeta Miller, Netuno,
 Saturno, Júpiter, Plutão, Ceres, Haumea, Sedna, Lua, Titã, Europa e Io.
-Versão 0.1.0: só o terreno das dimensões. Foguetes e trajes ainda não existem.
+Versão 0.2.0: só o terreno das dimensões (Plutão com oceano sob o gelo). Foguetes e trajes ainda não existem.
 '''
 authors = "doomersigma45, Claude"
 

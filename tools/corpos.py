@@ -17,6 +17,7 @@ LEGENDA
   biomas      caixas disjuntas em percentis: t=temperatura, h=umidade, c=região (c alto = montanhas)
   features    manchas/minérios: y=(min,max) absoluto ou ("rel", min, max) relativo ao base_y
   mobs        categoria -> [(entidade, peso, mín, máx)]
+  prob_criaturas  (opcional) creature_spawn_probability dos biomas do corpo (padrão do jogo: 0.1)
 """
 
 
@@ -237,17 +238,23 @@ CORPOS = {
     # ------------------------------------------------------------ PLANETAS ANÕES
     "plutao": dict(
         nome="Plutão", tipo="anao",
-        descricao="Planície branca de gelo de nitrogênio em forma de coração, terras escuras "
-                  "de tolinas e montanhas de gelo de água, sob um céu escuro.",
+        descricao="Crosta de gelo de nitrogênio com a região em forma de coração, terras escuras "
+                  "de tolinas e montanhas de gelo, sob um céu escuro. Debaixo da crosta de gelo "
+                  "há oceanos de água líquida. Na superfície crescem árvores de cristal e vivem "
+                  "precursores e robôs (spawns e árvores vêm do mod Netherite Supremo).",
         fisica=dict(gravidade_g=0.063, temperatura_c=-229, dia_horas=153.3,
                     atmosfera="N2 quase inexistente", respiravel=False,
                     perigos=["frio_extremo", "sem_oxigenio"]),
         dimensao=dict(luz_ambiente=0.05, tempo_fixo=18000, quente=False, temp_bioma=-1.0),
         cores=("#05060A", "#10131C", "#3A4A6A", "#1B2538"),
-        terreno=dict(modo="solido", default=M + "packed_ice", base_y=68, H=36,
-                     amp=0.30, xz=3.0, reg_xz=1.4, planicie=0.30, montanhas=(0.50, 0.10),
-                     crateras=[dict(ruido="minecraft:surface", xz=2.5, cob=0.05, prof=0.20)],
-                     fluido="water", nivel_mar=-64, cavernas=0.02, canions=0),
+        terreno=dict(
+            modo="camadas", default=M + "packed_ice", fluido="water", nivel_mar=60,
+            camadas=[
+                dict(y=(-200, 14), rampa=14, relevo=0.8, xz=3.0),    # fundo rochoso do oceano
+                dict(y=(56, 86), rampa=8, relevo=1.0, xz=2.6),       # crosta de gelo
+            ],
+            piso=dict(abaixo_de=40, topo=M + "stone", sub=M + "deepslate"),
+            clima_xz=2.2, reg_xz=1.4, cavernas=0.02, canions=0),
         biomas=[
             bioma("coracao_tombaugh", M + "snow_block", M + "calcite", c=(0, 0.30)),
             bioma("terra_escura_cthulhu", M + "brown_terracotta", M + "terracotta",
@@ -255,12 +262,16 @@ CORPOS = {
             bioma("montanhas_de_gelo", M + "packed_ice", M + "stone", c=(0.90, 1)),
         ],
         features=[
-            feat("gelo_de_metano", M + "blue_ice", 12, 6, ("rel", -10, 6)),
-            feat("tolinas", M + "red_terracotta", 8, 6, ("rel", -4, 2),
+            feat("gelo_de_metano", M + "blue_ice", 12, 6, (62, 86)),
+            feat("tolinas", M + "red_terracotta", 8, 6, (70, 86),
                  biomas=["terra_escura_cthulhu"]),
-            feat("ferro", M + "iron_ore", 9, 8, (-40, 50)),
+            feat("ferro", M + "iron_ore", 9, 8, (0, 14),
+                 alvo=[M + "stone", M + "deepslate"]),
         ],
-        mobs=dict(monster=[mob("stray", 40, 1, 3)]),
+        prob_criaturas=0.2,
+        mobs=dict(monster=[mob("stray", 40, 1, 3)],
+                  water_creature=[mob("squid", 10, 1, 3)],
+                  underground_water_creature=[mob("glow_squid", 20, 2, 4)]),
     ),
 
     "ceres": dict(

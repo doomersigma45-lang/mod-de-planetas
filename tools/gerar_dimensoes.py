@@ -160,7 +160,7 @@ def spawners(mobs):
 
 def bioma_json(cid, c, b, features_por_passo, carvers):
     ceu, neblina, agua, nevoa = (rgb(x) for x in b.get("cores", c["cores"]))
-    return {
+    r = {
         "has_precipitation": bool(b.get("chuva", False)),
         "temperature": b.get("temp_bioma", c["dimensao"]["temp_bioma"]),
         "downfall": 0.8 if b.get("chuva") else 0.0,
@@ -173,6 +173,9 @@ def bioma_json(cid, c, b, features_por_passo, carvers):
         "carvers": {"air": carvers} if carvers else {},
         "features": features_por_passo,
     }
+    if c.get("prob_criaturas") is not None:   # chance de nascerem criaturas na geração do chunk
+        r["creature_spawn_probability"] = c["prob_criaturas"]
+    return r
 
 
 # ------------------------------------------------- funções de densidade (relevo)

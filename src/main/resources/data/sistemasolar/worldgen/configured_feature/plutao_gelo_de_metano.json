@@ -57,6 +57,15 @@
           "predicate_type": "minecraft:block_match",
           "block": "minecraft:stone"
         }
+      },
+      {
+        "state": {
+          "Name": "minecraft:blue_ice"
+        },
+        "target": {
+          "predicate_type": "minecraft:block_match",
+          "block": "minecraft:deepslate"
+        }
       }
     ]
   }

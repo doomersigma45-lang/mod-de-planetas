@@ -97,15 +97,15 @@ Gigante de tempestades: ilhas de nuvem listradas em três altitudes, a Grande Ma
 
 ### Plutão  (`sistemasolar:plutao`)
 
-Planície branca de gelo de nitrogênio em forma de coração, terras escuras de tolinas e montanhas de gelo de água, sob um céu escuro.
+Crosta de gelo de nitrogênio com a região em forma de coração, terras escuras de tolinas e montanhas de gelo, sob um céu escuro. Debaixo da crosta de gelo há oceanos de água líquida. Na superfície crescem árvores de cristal e vivem precursores e robôs (spawns e árvores vêm do mod Netherite Supremo).
 
 - **Gravidade:** 0.063 g · **Temperatura média:** -229 °C · **Dia:** 153.3 h
 - **Atmosfera:** N2 quase inexistente · **Respirável:** não
 - **Perigos:** frio_extremo, sem_oxigenio
-- **Terreno:** sólido, altura média 68; montanhas em 10% do mapa; planícies achatadas em 30%; crateras (5% a 7 blocos); cavernas/tubos
+- **Terreno:** camadas flutuantes — y -200–14; y 56–86
 - **Biomas:** `coracao_tombaugh`, `terra_escura_cthulhu`, `montanhas_de_gelo`
 - **Minérios/manchas:** gelo_de_metano (blue ice), tolinas (red terracotta), ferro (iron ore)
-- **Criaturas:** stray
+- **Criaturas:** stray, squid, glow squid
 
 ### Ceres  (`sistemasolar:ceres`)
 

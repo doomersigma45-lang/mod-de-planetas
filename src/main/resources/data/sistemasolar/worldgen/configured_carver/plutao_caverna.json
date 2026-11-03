@@ -25,7 +25,8 @@
       "minecraft:calcite",
       "minecraft:brown_terracotta",
       "minecraft:terracotta",
-      "minecraft:stone"
+      "minecraft:stone",
+      "minecraft:deepslate"
     ],
     "vertical_radius_multiplier": {
       "type": "minecraft:uniform",
@@ -37,7 +38,7 @@
     "y": {
       "type": "minecraft:uniform",
       "max_inclusive": {
-        "absolute": 88
+        "absolute": 90
       },
       "min_inclusive": {
         "above_bottom": 8

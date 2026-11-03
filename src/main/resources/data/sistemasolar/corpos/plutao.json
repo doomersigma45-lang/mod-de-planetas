@@ -3,7 +3,7 @@
   "nome": "Plutão",
   "tipo": "anao",
   "dimensao": "sistemasolar:plutao",
-  "descricao": "Planície branca de gelo de nitrogênio em forma de coração, terras escuras de tolinas e montanhas de gelo de água, sob um céu escuro.",
+  "descricao": "Crosta de gelo de nitrogênio com a região em forma de coração, terras escuras de tolinas e montanhas de gelo, sob um céu escuro. Debaixo da crosta de gelo há oceanos de água líquida. Na superfície crescem árvores de cristal e vivem precursores e robôs (spawns e árvores vêm do mod Netherite Supremo).",
   "fisica": {
     "gravidade_g": 0.063,
     "temperatura_c": -229,
